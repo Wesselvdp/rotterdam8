@@ -1,0 +1,56 @@
+// base is black outline
+.btn-ss {
+  display: inline-flex; // or flex
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 2rem;
+  border: 1px solid #000;
+  border-radius: 45px;
+  color: #000;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  line-height: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &.white {
+    border: 1px solid #fff;
+    color: #fff;
+
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  &.black-full {
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+
+    &:hover {
+      border: 1px solid #fff;
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  &.white-full {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+
+    &:hover {
+      border: 1px solid #000;
+      background: #000;
+    }
+  }
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}

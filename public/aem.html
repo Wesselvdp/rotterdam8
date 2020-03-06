@@ -1,0 +1,42 @@
+<script type="text/javascript">
+  // <![CDATA[
+  let baseUrl;
+  if (location.host.indexOf("www") > -1) {
+    baseUrl =
+      "https://sebn.ams3.cdn.digitaloceanspaces.com/src/PROJECT_FOLER/latest/";
+  } else {
+    baseUrl =
+      "https://sebn.ams3.digitaloceanspaces.com/src/PROJECT_FOLDER/latest/staging/";
+  }
+  const files = ["css/app.css", "js/app.js", "js/chunk-vendors.js"];
+  for (let i = 0; i < files.length; i += 1) {
+    const file = files[i];
+    const ext = file.split(".")[1];
+    const preloadLink = document.createElement("link");
+    preloadLink.href = baseUrl + file;
+    preloadLink.rel = "preload";
+    if (ext === "css") {
+      preloadLink.as = "style";
+    } else {
+      preloadLink.as = "script";
+    }
+
+    document.head.appendChild(preloadLink);
+    var preloadedSrc;
+    if (ext === "css") {
+      preloadedSrc = document.createElement("link");
+      preloadedSrc.href = baseUrl + file;
+      preloadedSrc.type = "text/css";
+      preloadedSrc.rel = "stylesheet";
+    } else {
+      preloadedSrc = document.createElement("script");
+      preloadedSrc.src = baseUrl + file;
+    }
+    document.body.appendChild(preloadedSrc);
+  }
+  // ]]>
+</script>
+
+<div id="app">
+
+</div>
